@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap: cdvfile: ws: ms-appdata: https://ssl.gstatic.com http://cordova.apache.org http://bestwishess.online https://api.github.com https://cors-anywhere.herokuapp.com; style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content: blob:; media-src  * data: 'unsafe-inline' 'self' content: blob:">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/onsenui.css">
+        <link rel="stylesheet" href="css/onsen-css-components.min.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+        
+<div class="w-100 h-100 loader">
+    <div class="loader-svg">
+         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; display: block;"  viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+        <g transform="rotate(0)"><circle cx="73.801" cy="68.263" fill="#220b09" r="3" transform="rotate(142.225 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="0s"></animateTransform>
+        </circle><circle cx="68.263" cy="73.801" fill="#d34c31" r="3" transform="rotate(166.742 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.062s"></animateTransform>
+        </circle><circle cx="61.481" cy="77.716" fill="#e88432" r="3" transform="rotate(192.106 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.125s"></animateTransform>
+        </circle><circle cx="53.916" cy="79.743" fill="#ff312d" r="3" transform="rotate(216.662 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.187s"></animateTransform>
+        </circle><circle cx="46.084" cy="79.743" fill="#f5c037" r="3" transform="rotate(240.399 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.25s"></animateTransform>
+        </circle><circle cx="38.519" cy="77.716" fill="#e89788" r="3" transform="rotate(261.957 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.312s"></animateTransform>
+        </circle><circle cx="31.737" cy="73.801" fill="#fd3262" r="3" transform="rotate(281.632 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.375s"></animateTransform>
+        </circle><circle cx="26.199" cy="68.263" fill="#f0c3a9" r="3" transform="rotate(298.621 50 50)">
+          <animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;360 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s" begin="-0.437s"></animateTransform>
+        </circle><animateTransform attributeName="transform" type="rotate" calcMode="spline" values="0 50 50;0 50 50" times="0;1" keySplines="0.5 0 0.5 1" repeatCount="indefinite" dur="1.7857142857142856s"></animateTransform></g>
+        </svg>
+    </div>
+</div>
+
+
+
+
+
+
+        <ons-splitter>
+  <!-- The side menu -->
+  <ons-splitter-side id="menu" collapse width="220px" collapse swipeable>
+    <ons-page>
+    <ons-list>
+      <ons-list-item onclick="loadPage('about.html')">
+        About
+      </ons-list-item>
+    </ons-list>
+  </ons-page>
+  </ons-splitter-side>
+
+  <!-- Everything not in the side menu -->
+  <ons-splitter-content>
+    <ons-navigator id="navigator" page="login.html"></ons-navigator>
+  </ons-splitter-content>
+</ons-splitter>
+
+
+<!--- modals -->
+
+<ons-modal direction="up">
+  <div style="text-align: center">
+    <p>
+      <ons-icon icon="md-spinner" size="28px" spin></ons-icon> Loading...
+    </p>
+  </div>
+</ons-modal>
+
+
+<script>
+  const openMenu = () => {
+    document.querySelector('#menu').open();
+  };
+  const loadPage = (page) => {
+  document.querySelector('#menu').close();
+  document.querySelector('#navigator').bringPageTop(page, { animation: 'fade' });
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+        <script src="js/onsenui.min.js"></script>
+        <script src="js/aes.js"></script>
+        <script type="text/javascript" src="js/scrpt.js"></script>
+    </body>
+</html>

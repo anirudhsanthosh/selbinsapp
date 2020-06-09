@@ -1,0 +1,71 @@
+<ons-page id="home">
+	<ons-toolbar id="home-toolbar" modifier="transparent">
+		<div class="left">
+  			<ons-back-button></ons-back-button>
+		</div>
+	</ons-toolbar>
+	<div class="player-page-content">
+
+		<div class="player-page-logo"></div>
+		<div class="player-page-controls">
+			<div class="player-page-seeker">
+				<ons-range style="width: 100%;" value="0" min="0" max="100" step="1" id="seeker"></ons-range>
+			</div>
+			<div class="player-page-buttons">
+				<span class="player-page-button" id="player-page-button-play">
+					<ons-icon icon="md-pause"></ons-icon>
+				</span>
+
+			</div>
+
+
+			
+
+
+
+		</div>
+		
+	</div>
+	<script>
+      ons.getScriptPage().onInit = function() {
+
+        console.log('player init');
+
+        if(player.updateSeekerIntervel) window.clearInterval(player.updateSeekerIntervel);
+
+        player.updateSeekerIntervel = setInterval(()=>{
+						player.media.getCurrentPosition((e)=>{
+							
+							const completed = e/player.media._duration*100;
+							 document.getElementById('seeker').setAttribute('value',completed);
+						},
+							(e)=>console.log(e)
+						)
+					},1000)
+        
+        document.getElementById('seeker').oninput = (e)=>{
+
+        	console.log(e.target.getAttribute('value'));
+        }
+        
+
+        document.getElementById('player-page-button-play').onclick = (e)=>{
+
+        	const status = player.mediaStatus;
+        	player.playPause();
+        	document.getElementById('player-page-button-play').innerHTML ='';
+        	if(status !== 2) return document.getElementById('player-page-button-play').innerHTML = `<ons-icon icon="md-pause"></ons-icon>`;
+
+        	document.getElementById('player-page-button-play').innerHTML = `<ons-icon icon="md-play"></ons-icon>`;
+        }
+
+
+
+
+
+        this.onShow = function() { console.log('home show') };
+        this.onHide = function() { console.log('home hide') };
+        this.onDestroy = function() { console.log('home destroy') };
+      };
+</script>
+</ons-page>

@@ -1,0 +1,37 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-privacyscreen": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-media": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    }
+  },
+  "dependent_plugins": {
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.entertext.selbin"
+    }
+  }
+}

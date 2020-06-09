@@ -1,0 +1,80 @@
+<ons-page id="home">
+	<ons-toolbar id="home-toolbar">
+		<div class="left">
+		  <ons-toolbar-button onclick="openMenu()">
+		    <ons-icon icon="md-menu"></ons-icon>
+		  </ons-toolbar-button>
+		</div>
+		<div class="right d-flex align-items-center justify-content-center">
+		  <img src="img/toolbar-logo.png" class="tool-bar-logo">
+		</div>
+  	</ons-toolbar>
+
+
+  	<ons-tabbar id="tabbar" swipeable>
+	    <ons-tab page="saved.html" label="Saved" icon="md-collection-music" id="new-saved-files-tab" ></ons-tab>
+	    <ons-tab page="new.html" label="New" icon="md-download"  id="new-downloads"></ons-tab>
+
+  	</ons-tabbar>
+
+  	<template id="new.html">
+	  <ons-page id="new">
+	   <div id="file-list">
+  		</div>
+	  </ons-page>
+	</template>
+	<template id="saved.html">
+	  <ons-page id="saved">
+	   <div id="saved-file-list">
+  		</div>
+  		
+	  </ons-page>
+	</template>
+
+
+  	
+
+ 	<div class="player-controls"></div>
+
+
+
+
+
+
+
+<script>
+      ons.getScriptPage().onInit = function() {
+        
+      		showModal()
+      	 generateThumpnail()
+
+      	
+      	 document.addEventListener('init', function(event) {
+			  var page = event.target;
+			  if (page.matches('#saved')) {
+			  	
+			   showSavedFiles()
+			  }
+			});
+
+
+
+
+
+
+
+        console.log('home init')
+
+        this.onShow = function() { console.log('home show') };
+        this.onHide = function() { console.log('home hide') };
+        this.onDestroy = function() { console.log('home destroy') };
+      };
+</script>
+
+
+
+
+
+
+
+</ons-page>
